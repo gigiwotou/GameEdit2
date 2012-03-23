@@ -9,7 +9,6 @@ namespace WindowsGame1
 {
     interface Unit
     {
-        public Unit(Game1 game);
         void Update(GameTime gameTime);
         void Draw(SpriteBatch spBatch);
     }

@@ -51,7 +51,9 @@
     <Compile Include="AnimationTrack.cs" />
     <Compile Include="AnimStatus.cs" />
     <Compile Include="AnimStatusSet.cs" />
+    <Compile Include="Helper\Matrix4x3.cs" />
     <Compile Include="Helper\PointFConverter.cs" />
+    <Compile Include="Helper\Vector3.cs" />
     <Compile Include="Image.cs" />
     <Compile Include="Imageset.cs" />
     <Compile Include="ImagesetManager.cs" />

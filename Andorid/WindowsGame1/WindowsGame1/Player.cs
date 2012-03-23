@@ -50,7 +50,8 @@ namespace WindowsGame1
 
         public void Draw(AnimationTrack track, SpriteBatch spBatch)
         {
-            Microsoft.Xna.Framework.Matrix worldMatrix = track.CachedMatrix;
+            Microsoft.Xna.Framework.Matrix worldMatrix = new Microsoft.Xna.Framework.Matrix();
+            worldMatrix.M11 = track.CachedMatrix;
 
             // fetch the image out.
             Microsoft.Xna.Framework.Rectangle rect;
