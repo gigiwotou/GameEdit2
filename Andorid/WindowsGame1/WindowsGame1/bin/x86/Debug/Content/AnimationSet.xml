@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Content xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <AnimationSets>
+    <AnimationSet Name="AnimationSet0">
+      <Animations>
+        <Animation Name="Animation0" Time="5000">
+          <AnimTracks>
+            <AnimationTrack Name="root">
+              <AnimTracks>
+                <AnimationTrack Name="body" ImageName="zbody:body">
+                  <AnimTracks />
+                  <AnimKeys>
+                    <AnimationKey Rotate="1.403429">
+                      <Center>
+                        <X>-2</X>
+                        <Y>23</Y>
+                      </Center>
+                    </AnimationKey>
+                    <AnimationKey Time="2050" Rotate="12.3185816">
+                      <Center>
+                        <X>-2</X>
+                        <Y>23</Y>
+                      </Center>
+                    </AnimationKey>
+                    <AnimationKey Time="3350" Rotate="12.3185816">
+                      <Center>
+                        <X>-2</X>
+                        <Y>23</Y>
+                      </Center>
+                    </AnimationKey>
+                  </AnimKeys>
+                  <CachedKey Rotate="11.1365509">
+                    <Color />
+                    <Center>
+                      <X>-2</X>
+                      <Y>23</Y>
+                    </Center>
+                  </CachedKey>
+                </AnimationTrack>
+                <AnimationTrack Name="bodyd" ImageName="zbodyD:bodyD">
+                  <AnimTracks />
+                  <AnimKeys>
+                    <AnimationKey Rotate="-8.511179">
+                      <Color />
+                      <Location>
+                        <X>8.999999</X>
+                        <Y>35.9999962</Y>
+                      </Location>
+                    </AnimationKey>
+                    <AnimationKey Time="2060" Rotate="-8.511179">
+                      <Location>
+                        <X>9</X>
+                        <Y>36</Y>
+                      </Location>
+                    </AnimationKey>
+                  </AnimKeys>
+                  <CachedKey Rotate="-8.511179">
+                    <Color />
+                    <Location>
+                      <X>9</X>
+                      <Y>36</Y>
+                    </Location>
+                  </CachedKey>
+                </AnimationTrack>
+                <AnimationTrack Name="head" ImageName="zhead:head">
+                  <AnimTracks>
+                    <AnimationTrack Name="hair" ImageName="zhair:hair">
+                      <AnimTracks />
+                      <AnimKeys />
+                      <CachedKey>
+                        <Location>
+                          <X>0</X>
+                          <Y>-11</Y>
+                        </Location>
+                      </CachedKey>
+                    </AnimationTrack>
+                  </AnimTracks>
+                  <AnimKeys>
+                    <AnimationKey Rotate="4.840561">
+                      <Center>
+                        <X>2</X>
+                        <Y>33</Y>
+                      </Center>
+                      <Location>
+                        <X>-15</X>
+                        <Y>-58</Y>
+                      </Location>
+                    </AnimationKey>
+                    <AnimationKey Time="2060" Rotate="-12.3249273">
+                      <Center>
+                        <X>2</X>
+                        <Y>33</Y>
+                      </Center>
+                      <Location>
+                        <X>-7</X>
+                        <Y>-59</Y>
+                      </Location>
+                    </AnimationKey>
+                    <AnimationKey Time="3390" Rotate="-0.213278">
+                      <Center>
+                        <X>2</X>
+                        <Y>33</Y>
+                      </Center>
+                      <Location>
+                        <X>-7</X>
+                        <Y>-59</Y>
+                      </Location>
+                    </AnimationKey>
+                  </AnimKeys>
+                  <CachedKey Rotate="-10.3917265">
+                    <Color />
+                    <Center>
+                      <X>2</X>
+                      <Y>33</Y>
+                    </Center>
+                    <Location>
+                      <X>-7.900971</X>
+                      <Y>-58.88738</Y>
+                    </Location>
+                  </CachedKey>
+                </AnimationTrack>
+              </AnimTracks>
+              <AnimKeys />
+              <CachedKey Time="1780" />
+            </AnimationTrack>
+          </AnimTracks>
+        </Animation>
+      </Animations>
+    </AnimationSet>
+    <AnimationSet Name="tuzi">
+      <Animations>
+        <Animation Name="tuzix" Time="1000">
+          <AnimTracks>
+            <AnimationTrack Name="NewTrack0" ImageName="tuzi:tuzi" ImageColum="7" ImageStart="1">
+              <AnimTracks />
+              <AnimKeys>
+                <AnimationKey />
+                <AnimationKey Time="870" Rotate="15.682065" ImageIndexOffset="5">
+                  <Scale>
+                    <X>1.81250083</X>
+                    <Y>1.64583337</Y>
+                  </Scale>
+                </AnimationKey>
+              </AnimKeys>
+              <CachedKey Rotate="13.91558" ImageIndexOffset="4.436782">
+                <Color />
+                <Scale>
+                  <X>1.72097778</X>
+                  <Y>1.57308435</Y>
+                </Scale>
+              </CachedKey>
+            </AnimationTrack>
+          </AnimTracks>
+        </Animation>
+      </Animations>
+    </AnimationSet>
+  </AnimationSets>
+</Content>

@@ -1,0 +1,9 @@
+F:\Andorid319\Andorid\WindowsGame1\WindowsGame1\bin\x86\Debug\WindowsGame1.exe
+F:\Andorid319\Andorid\WindowsGame1\WindowsGame1\bin\x86\Debug\WindowsGame1.pdb
+F:\Andorid319\Andorid\WindowsGame1\WindowsGame1\bin\x86\Debug\GameData.dll
+F:\Andorid319\Andorid\WindowsGame1\WindowsGame1\bin\x86\Debug\GameData.pdb
+F:\Andorid319\Andorid\WindowsGame1\WindowsGame1\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\Andorid319\Andorid\WindowsGame1\WindowsGame1\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+F:\Andorid319\Andorid\WindowsGame1\WindowsGame1\obj\x86\Debug\WindowsGame1.exe
+F:\Andorid319\Andorid\WindowsGame1\WindowsGame1\obj\x86\Debug\WindowsGame1.pdb
+F:\Andorid319\Andorid\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\Missing.xnb

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Content xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Imagesets>
+    <Imageset Name="zhead" FileName="F:\Andorid319\image\Zombie_dancer__head.png" Width="53" Height="48">
+      <Images>
+        <Image Name="head" Height="48" Width="53" />
+      </Images>
+    </Imageset>
+    <Imageset Name="zbody" FileName="F:\Andorid319\image\Zombie_polevaulter_body1.png" Width="53" Height="60">
+      <Images>
+        <Image Name="body" Height="60" Width="53" />
+      </Images>
+    </Imageset>
+    <Imageset Name="zhair" FileName="F:\Andorid319\image\Zombie_polevaulter_hair.png" Width="71" Height="41">
+      <Images>
+        <Image Name="hair" Height="41" Width="71" />
+      </Images>
+    </Imageset>
+    <Imageset Name="zbodyD" FileName="F:\Andorid319\image\Zombie_polevaulter_body2.png" Width="41" Height="33">
+      <Images>
+        <Image Name="bodyD" Height="33" Width="41" />
+      </Images>
+    </Imageset>
+    <Imageset Name="tuzi" FileName="F:\Andorid319\image\Image04.png" Width="384" Height="384">
+      <Images>
+        <Image Name="tuzi" Height="48" Width="336" />
+      </Images>
+    </Imageset>
+  </Imagesets>
+</Content>

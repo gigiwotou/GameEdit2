@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{545B7402-15BB-48AE-8081-0E568D07F5F9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GameEditor</RootNamespace>
+    <AssemblyName>GameEditor</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\AnimationControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AnimationControl.Designer.cs">
+      <DependentUpon>AnimationControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AnimationPreviewPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AnimationPreviewPanel.Designer.cs">
+      <DependentUpon>AnimationPreviewPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AnimationSetPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AnimationSetPanel.Designer.cs">
+      <DependentUpon>AnimationSetPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AnimationTrackControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AnimationTrackControl.Designer.cs">
+      <DependentUpon>AnimationTrackControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DoubleBuffControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DoubleBuffControl.Designer.cs">
+      <DependentUpon>DoubleBuffControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ImagesetPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ImagesetPanel.Designer.cs">
+      <DependentUpon>ImagesetPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SettingDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\SettingDlg.Designer.cs">
+      <DependentUpon>SettingDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ImagesetInfo.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\MathHelper.cs" />
+    <EmbeddedResource Include="Controls\AnimationControl.resx">
+      <DependentUpon>AnimationControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AnimationPreviewPanel.resx">
+      <DependentUpon>AnimationPreviewPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AnimationSetPanel.resx">
+      <DependentUpon>AnimationSetPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AnimationTrackControl.resx">
+      <DependentUpon>AnimationTrackControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ImagesetPanel.resx">
+      <DependentUpon>ImagesetPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SettingDlg.resx">
+      <DependentUpon>SettingDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GameData\GameData.csproj">
+      <Project>{0094F47F-044A-461C-BE75-E05226D8DFE5}</Project>
+      <Name>GameData</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddTable.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cut.bmp" />
+    <Content Include="Resources\Missing.bmp" />
+    <None Include="Resources\Stop.bmp" />
+    <None Include="Resources\Play.bmp" />
+    <None Include="Resources\Pause.bmp" />
+    <Content Include="Resources\Rotate.cur" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
