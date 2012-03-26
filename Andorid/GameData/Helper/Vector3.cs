@@ -17,119 +17,98 @@ namespace GameData.Helper
 {
     class Vector3
     {
-        // Public representation:  Not many options here.
+    // Public representation:  Not many options here.
 
-	        float x,y,z;
+	    float x;
+        public float X {get{return x;} set{x = value;}}
+        float y;
+        public float Y {get{return y;} set{y = value;}}
+        float z;
+        public float Z {get{return z;} set{z = value;}}
 
-        // Constructors
+    // Constructors
+        
+	    // Construct given three values
 
-	        // Default constructor leaves vector in
-	        // an indeterminate state
+	    public Vector3(float nx, float ny, float nz) 
+        {
+            x = nx;
+            y = ny;
+            z = nz;
+        }
 
-	        Vector3() {}
+    // Standard object maintenance
 
-	        // Copy constructor
+	    // Check for equality
 
-	        Vector3(const Vector3 &a) : x(a.x), y(a.y), z(a.z) {}
+	    public static bool operator ==(Vector3 a, Vector3 b) 
+        {
+		    return b.X==a.X && b.Y==a.Y && b.Z==a.Z;
+	    }
 
-	        // Construct given three values
-
-	        Vector3(float nx, float ny, float nz) : x(nx), y(ny), z(nz) {}
-
-        // Standard object maintenance
-
-	        // Assignment.  We adhere to C convention and
-	        // return reference to the lvalue
-
-	        Vector3 &operator =(const Vector3 &a) {
-		        x = a.x; y = a.y; z = a.z;
-		        return *this;
-	        }
-
-	        // Check for equality
-
-	        bool operator ==(const Vector3 &a) const {
-		        return x==a.x && y==a.y && z==a.z;
-	        }
-
-	        bool operator !=(const Vector3 &a) const {
-		        return x!=a.x || y!=a.y || z!=a.z;
-	        }
+	    public static bool operator !=(Vector3 a, Vector3 b) 
+        {
+		    return b.X!=a.X || b.Y!=a.Y || b.Z!=a.Z;
+	    }
 
 
-        // Vector operations
+    // Vector operations
 
-	        // Set the vector to zero
+	    // Set the vector to zero
 
-	        void zero() { x = y = z = 0.0f; }
+	    public void zero() { x = y = z = 0.0f; }
 
-	        // Unary minus returns the negative of the vector
+	    // Unary minus returns the negative of the vector
 
-	        Vector3 operator -() const { return Vector3(-x,-y,-z); }
+	    public static Vector3 operator -(Vector3 a) { return new Vector3(-a.X,-a.Y,-a.Z); }
 
-	        // Binary + and - add and subtract vectors
+	    // Binary + and - add and subtract vectors
 
-	        Vector3 operator +(const Vector3 &a) const {
-		        return Vector3(x + a.x, y + a.y, z + a.z);
-	        }
+	    public static Vector3 operator +(Vector3 a, Vector3 b) 
+        {
+		    return new Vector3(a.X + b.X, a.Y + b.Y, a.Z + b.Z);
+	    }
 
-	        Vector3 operator -(const Vector3 &a) const {
-		        return Vector3(x - a.x, y - a.y, z - a.z);
-	        }
+	    public static Vector3 operator -(Vector3 b, Vector3 a) 
+        {
+		    return new Vector3(b.X - a.X, b.Y - a.Y, b.Z - a.Z);
+	    }
 
-	        // Multiplication and division by scalar
+	    // Multiplication and division by scalar
 
-	        Vector3 operator *(float a) const {
-		        return Vector3(x*a, y*a, z*a);
-	        }
+	    public static Vector3 operator *(Vector3 a, float f) 
+        {
+		    return new Vector3(a.X*f, a.Y*f, a.Z*f);
+	    }
 
-	        Vector3 operator /(float a) const {
-		        float	oneOverA = 1.0f / a; // NOTE: no check for divide by zero here
-		        return Vector3(x*oneOverA, y*oneOverA, z*oneOverA);
-	        }
+	    public static Vector3 operator /(Vector3 a, float f) 
+        {
+		    float	oneOverA = 1.0f / f; // NOTE: no check for divide by zero here
+		    return new Vector3(a.X*oneOverA, a.Y*oneOverA, a.Z*oneOverA);
+	    }
 
-	        // Combined assignment operators to conform to
-	        // C notation convention
 
-	        Vector3 &operator +=(const Vector3 &a) {
-		        x += a.x; y += a.y; z += a.z;
-		        return *this;
-	        }
+	    // Normalize the vector
 
-	        Vector3 &operator -=(const Vector3 &a) {
-		        x -= a.x; y -= a.y; z -= a.z;
-		        return *this;
-	        }
+	    public void	normalize() 
+        {
+		    double magSq = x*x + y*y + z*z;
+		    if (magSq > 0.0f) 
+            { // check for divide-by-zero
+			    float oneOverMag = (float) (1.0f / Math.Sqrt(magSq));
+			    x *= oneOverMag;
+			    y *= oneOverMag;
+			    z *= oneOverMag;
+		    }
+	    }
 
-	        Vector3 &operator *=(float a) {
-		        x *= a; y *= a; z *= a;
-		        return *this;
-	        }
+	    // Vector dot product.  We overload the standard
+	    // multiplication symbol to do this
 
-	        Vector3 &operator /=(float a) {
-		        float	oneOverA = 1.0f / a;
-		        x *= oneOverA; y *= oneOverA; z *= oneOverA;
-		        return *this;
-	        }
-
-	        // Normalize the vector
-
-	        void	normalize() {
-		        float magSq = x*x + y*y + z*z;
-		        if (magSq > 0.0f) { // check for divide-by-zero
-			        float oneOverMag = 1.0f / sqrt(magSq);
-			        x *= oneOverMag;
-			        y *= oneOverMag;
-			        z *= oneOverMag;
-		        }
-	        }
-
-	        // Vector dot product.  We overload the standard
-	        // multiplication symbol to do this
-
-	        float operator *(const Vector3 &a) const {
-		        return x*a.x + y*a.y + z*a.z;
-	        }
+	    public static float operator *(Vector3 a, Vector3 b) 
+        {
+		    return a.X*b.X + a.Y*b.Y + a.Z*b.Z;
+	    }
 
         /////////////////////////////////////////////////////////////////////////////
         //
@@ -139,44 +118,47 @@ namespace GameData.Helper
 
         // Compute the magnitude of a vector
 
-        float vectorMag(const Vector3 &a) {
-	        return sqrt(a.x*a.x + a.y*a.y + a.z*a.z);
+        public static float vectorMag(Vector3 a) {
+	        return (float)Math.Sqrt(a.X*a.X + a.Y*a.Y + a.Z*a.Z);
         }
 
         // Compute the cross product of two vectors
 
-        inline Vector3 crossProduct(const Vector3 &a, const Vector3 &b) {
-	        return Vector3(
-		        a.y*b.z - a.z*b.y,
-		        a.z*b.x - a.x*b.z,
-		        a.x*b.y - a.y*b.x
+        public static Vector3 crossProduct(Vector3 a, Vector3 b) 
+        {
+	        return new Vector3(
+		        a.Y*b.Z - a.Z*b.Y,
+		        a.Z*b.X - a.X*b.Z,
+		        a.X*b.Y - a.Y*b.X
 	        );
         }
 
         // Scalar on the left multiplication, for symmetry
 
-        inline Vector3 operator *(float k, const Vector3 &v) {
-	        return Vector3(k*v.x, k*v.y, k*v.z);
+        public static Vector3 operator *(float k, Vector3 v) 
+        {
+	        return new Vector3(k*v.X, k*v.Y, k*v.Z);
         }
 
         // Compute the distance between two points
 
-        inline float distance(const Vector3 &a, const Vector3 &b) {
-	        float dx = a.x - b.x;
-	        float dy = a.y - b.y;
-	        float dz = a.z - b.z;
-	        return sqrt(dx*dx + dy*dy + dz*dz);
+        public static float distance(Vector3 a, Vector3 b) 
+        {
+	        float dx = a.X - b.X;
+	        float dy = a.X - b.X;
+	        float dz = a.X - b.X;
+	        return (float)Math.Sqrt(dx*dx + dy*dy + dz*dz);
         }
 
         // Compute the distance between two points, squared.  Often useful
         // when comparing distances, since the square root is slow
 
-        inline float distanceSquared(const Vector3 &a, const Vector3 &b) {
-	        float dx = a.x - b.x;
-	        float dy = a.y - b.y;
-	        float dz = a.z - b.z;
+        public static float distanceSquared(Vector3 a, Vector3 b) 
+        {
+	        float dx = a.X - b.X;
+	        float dy = a.Y - b.Y;
+	        float dz = a.Z - b.Z;
 	        return dx*dx + dy*dy + dz*dz;
         }
-
     }
 }
