@@ -300,7 +300,7 @@ namespace GameEditor.Controls
                 return;
 
             int newTime = mPreviewPanel.TimePosition + timer1.Interval;
-            if (newTime > mAnimation.Time)
+            while (newTime > mAnimation.Time)
                 newTime -= mAnimation.Time;
             SetTimePosition(newTime);
         }

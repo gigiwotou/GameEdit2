@@ -61,6 +61,8 @@
     <Compile Include="Image.cs" />
     <Compile Include="Imageset.cs" />
     <Compile Include="ImagesetManager.cs" />
+    <Compile Include="MapBlock.cs" />
+    <Compile Include="MapSet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Root.cs" />
     <Compile Include="Singleton.cs" />

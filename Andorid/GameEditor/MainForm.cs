@@ -15,6 +15,7 @@ namespace GameEditor
     {
         ImagesetPanel mImagesetPanel;
         AnimationSetPanel mAnimationSetPanel;
+        MapBlockPanel mMapBlockPanel;
 
         public MainForm()
         {
@@ -32,6 +33,10 @@ namespace GameEditor
             mAnimationSetPanel = new AnimationSetPanel();
             mAnimationSetPanel.Dock = DockStyle.Fill;
             tabPageAnimations.Controls.Add(mAnimationSetPanel);
+
+            mMapBlockPanel = new MapBlockPanel();
+            mMapBlockPanel.Dock = DockStyle.Fill;
+            tabPageMap.Controls.Add(mMapBlockPanel);
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)

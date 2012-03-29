@@ -205,6 +205,18 @@
             this.listView2.SelectedIndexChanged += new System.EventHandler(this.listView2_SelectedIndexChanged);
             this.listView2.DoubleClick += new System.EventHandler(this.OnListViewDoubleClicked);
             // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Width = 84;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Width = 96;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Width = 78;
+            // 
             // toolStrip2
             // 
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {

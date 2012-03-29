@@ -82,6 +82,12 @@
     <Compile Include="Controls\ImagesetPanel.Designer.cs">
       <DependentUpon>ImagesetPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\MapBlock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MapBlock.Designer.cs">
+      <DependentUpon>MapBlock.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\SettingDlg.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ImagesetPanel.resx">
       <DependentUpon>ImagesetPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MapBlock.resx">
+      <DependentUpon>MapBlock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\SettingDlg.resx">
       <DependentUpon>SettingDlg.cs</DependentUpon>

@@ -25,7 +25,7 @@ namespace WindowsGame1
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            mPlayer = new Player(this);
+            
         }
 
         /// <summary>
@@ -37,9 +37,10 @@ namespace WindowsGame1
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            Root.Instance.Init("");
+            Root.Instance.Init("F:\\Andorid\\Andorid\\GameEditor\\bin\\Debug");
             LoadImagesets();
             base.Initialize();
+            mPlayer = new Player(this);
         }
 
         /// <summary>
@@ -88,9 +89,9 @@ namespace WindowsGame1
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-            spriteBatch.Begin();
+            //spriteBatch.Begin();
             mPlayer.Draw(spriteBatch);
-            spriteBatch.End();
+            //spriteBatch.End();
 
             base.Draw(gameTime);
         }
@@ -110,7 +111,10 @@ namespace WindowsGame1
             try
             {
                 if (imageset.Tag == null)
-                    imageset.Tag = this.Content.Load<Texture2D>(Path.GetFileName(imageset.FileName));
+                {
+                    Texture2D t = this.Content.Load<Texture2D>(Path.GetFileNameWithoutExtension(imageset.FileName));
+                    imageset.Tag = t;
+                }
                 foreach (GameData.Image image in imageset.Images)
                 {
                     Rectangle rect = new Rectangle(image.X, image.Y, image.Width, image.Height);

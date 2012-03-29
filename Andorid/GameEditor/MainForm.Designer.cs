@@ -37,6 +37,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageImageset = new System.Windows.Forms.TabPage();
             this.tabPageAnimations = new System.Windows.Forms.TabPage();
+            this.tabPageMap = new System.Windows.Forms.TabPage();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -89,6 +90,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPageImageset);
             this.tabControl1.Controls.Add(this.tabPageAnimations);
+            this.tabControl1.Controls.Add(this.tabPageMap);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 49);
             this.tabControl1.Name = "tabControl1";
@@ -111,10 +113,20 @@
             this.tabPageAnimations.Location = new System.Drawing.Point(4, 21);
             this.tabPageAnimations.Name = "tabPageAnimations";
             this.tabPageAnimations.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAnimations.Size = new System.Drawing.Size(803, 299);
+            this.tabPageAnimations.Size = new System.Drawing.Size(803, 300);
             this.tabPageAnimations.TabIndex = 1;
             this.tabPageAnimations.Text = "Animations";
             this.tabPageAnimations.UseVisualStyleBackColor = true;
+            // 
+            // tabPageMap
+            // 
+            this.tabPageMap.Location = new System.Drawing.Point(4, 21);
+            this.tabPageMap.Name = "tabPageMap";
+            this.tabPageMap.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageMap.Size = new System.Drawing.Size(803, 300);
+            this.tabPageMap.TabIndex = 2;
+            this.tabPageMap.Text = "Map";
+            this.tabPageMap.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -151,6 +163,7 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPageImageset;
         private System.Windows.Forms.TabPage tabPageAnimations;
+        private System.Windows.Forms.TabPage tabPageMap;
     }
 }
 

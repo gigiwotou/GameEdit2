@@ -15,20 +15,24 @@ namespace WindowsGame1
         AnimationSet mAnimationset;
         Animation mAnimation;
         Game1 mGame;
-        Microsoft.Xna.Framework.Matrix mViewMatrix = new Microsoft.Xna.Framework.Matrix();
+
+        int mTime = 0;
+        public int Time { get { return mTime; } }
+
+        System.Drawing.Drawing2D.Matrix mViewMatrix = new System.Drawing.Drawing2D.Matrix();
 
         public Player(Game1 game)
         {
             mGame = game;
             mAnimationset = AnimationSetManager.Instance.Get("tuzi");
-            mAnimation = mAnimationset.Animations[1];
+            mAnimation = mAnimationset.Animations[0];
         }
         public void Draw(SpriteBatch spBatch)
         {
             if (mAnimation != null && mAnimation.AnimTracks.Count > 0)
                 Draw(mAnimation.AnimTracks, spBatch);
 
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         public void Draw(List<AnimationTrack> tracks, SpriteBatch spBatch)
@@ -50,19 +54,36 @@ namespace WindowsGame1
 
         public void Draw(AnimationTrack track, SpriteBatch spBatch)
         {
-            Microsoft.Xna.Framework.Matrix worldMatrix = new Microsoft.Xna.Framework.Matrix();
-            worldMatrix.M11 = track.CachedMatrix;
+            System.Drawing.Drawing2D.Matrix worldMatrix = new System.Drawing.Drawing2D.Matrix();
+            worldMatrix = track.CachedMatrix;
 
             // fetch the image out.
             Microsoft.Xna.Framework.Rectangle rect;
             Texture2D texture = GetTexture(track, out rect);
 
-            Microsoft.Xna.Framework.Matrix finalTransform = mViewMatrix.Clone();
+            System.Drawing.Drawing2D.Matrix finalTransform = mViewMatrix.Clone();
             finalTransform.Multiply(worldMatrix);
-            //g.Transform = finalTransform;
+            float[] gM = finalTransform.Elements;
 
-            // draw the image.
-            //g.DrawImage(texture, new PointF(-texture.Width * 0.5f, -texture.Height * 0.5f));
+            Microsoft.Xna.Framework.Matrix xM = new Microsoft.Xna.Framework.Matrix();
+           
+            xM.M11 = gM[0];
+            xM.M12 = gM[1];
+            xM.M21 = gM[2];
+            xM.M22 = gM[3];
+            xM.M41 = gM[4];
+            xM.M42 = gM[5];
+            xM.M33 = 1;
+            xM.M44 = 1;
+            Microsoft.Xna.Framework.Rectangle dRect = new Microsoft.Xna.Framework.Rectangle();
+            dRect.X = 100;
+            dRect.Y = 100;
+            dRect.Width = rect.Width;
+            dRect.Height = rect.Height;
+
+            spBatch.Begin(SpriteSortMode.Immediate,BlendState.AlphaBlend,SamplerState.LinearClamp,DepthStencilState.None,RasterizerState.CullCounterClockwise,null,xM);
+            spBatch.Draw(texture, dRect, rect, Microsoft.Xna.Framework.Color.White);
+            spBatch.End();
         }
 
         Texture2D GetTexture(AnimationTrack track, out Microsoft.Xna.Framework.Rectangle rect1)
@@ -76,8 +97,8 @@ namespace WindowsGame1
                 int start = track.ImageStart;
                 int offset = (int)track.CachedKey.ImageIndexOffset;
 
-                int width = texture.Width / col;
-                int height = texture.Height / row;
+                int width = image.Width / col;
+                int height = image.Height / row;
                 int remainder;
                 int quotient = Math.DivRem(offset, col, out remainder);
                 if (quotient >= row)
@@ -85,7 +106,7 @@ namespace WindowsGame1
 
                 int x = remainder * width;
                 int y = quotient * height;
-                rect1 = new Microsoft.Xna.Framework.Rectangle(x, y, width, height);
+                rect1 = new Microsoft.Xna.Framework.Rectangle(image.X + x, image.Y + y, width, height);
                 return texture;
             }
             Texture2D t2d = mGame.Content.Load<Texture2D>("Missing");
@@ -97,12 +118,17 @@ namespace WindowsGame1
         {
             if (mAnimation == null)
                 return;
+            mTime += gameTime.ElapsedGameTime.Milliseconds;
+            while (mTime > mAnimation.Time)
+                mTime -= mAnimation.Time;
+
             foreach (AnimationTrack track in mAnimation.AnimTracks)
             {
-                track.SetTimePosition(gameTime.ElapsedGameTime.Milliseconds);
+                track.FlushImage();
+                track.SetTimePosition(mTime);
                 track.FlushTransform();
             }
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
     }
 }
